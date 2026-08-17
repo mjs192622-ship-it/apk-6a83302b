@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pciapps.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Required for Android 11+ intent visibility -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="text/plain" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="market" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="PCI APPS"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
+        android:resizeableActivity="false"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules">
+        
+        <meta-data android:name="privacy_policy_url" android:value="https://id-preview--1236536e-1ecd-4398-92a6-5728456ccdc7.lovable.app/?__lovable_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9%2EeyJ1c2VyX2lkIjoiMGVpcXpuQ2NWWmNydVJTNW9jSDNyczlqUU9GMiIsInByb2plY3RfaWQiOiIxMjM2NTM2ZS0xZWNkLTQzOTgtOTJhNi01NzI4NDU2Y2NkYzciLCJhY2Nlc3NfdHlwZSI6InByb2plY3QiLCJpc3MiOiJsb3ZhYmxlLWFwaSIsInN1YiI6IjEyMzY1MzZlLTFlY2QtNDM5OC05MmE2LTU3Mjg0NTZjY2RjNyIsImF1ZCI6WyJsb3ZhYmxlLWFwcCJdLCJleHAiOjE3ODcwNjc5ODcsIm5iZiI6MTc4Njk4MTU4NywiaWF0IjoxNzg2OTgxNTg3fQ%2ETEOsrWLEpbFL8b1cSkoDUUIhzMQZWYC-nAFGMtVmU1_nC1FqICIeB3fBJAJSdyedmr5ZZUp4jFU2D4sh2eI00uaNP0cQRAunLR4BmGw0RsowDJsAS5J90ZWmN6kudyzTdlWuiSkeWag_4MI2b8POQ6nvAElJ6d-wXMy9EEVfSsK8Lf3Gr07skhNPddyPr8BHD9dNSc63dML6pht3v6X2j209mq4KfId0yUIphxuLwhy4SJI5dENKCMvBNfZLFA5-6cq4oqSlaAnxENCkpm9aRZPYT3v67nIDZBJQXD4p-xnLdx8qySFM_Dw5tk-aB6QAWXgQ5nwUTfhkuKE9-AN1F24QdYUwa5URnyqbFwiDrRJJDcw96GU6q7hBsXIIorh3Rew7g6HiCjNKjPbN-BOxbsIiJYXMKkH6OMXahWh_99t1sfcEXylfQLQSH_JkCtz3u-QVDDP6jTESiMVqg08WF9hvKNBphoPn3u1eAWYTjP9AuqUD4zFlJSadK0yRcnxEiP4GTnU4hTmWT7JtD-AW3lg9fScax3QO2f0BgLelk6" />
+        
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="unspecified"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="httpsidpreview1236536e1ecd439892a65728456ccdc7lovableapplovabletokeneyjhbgcioijsuzi1niisinr5cci6ikpxvcj92eeyj1c2vyx2lkijoimgvpcxpuq2nwwmnydvjtnw9jsdnyczlquu9gmiisinbyb2ply3rfawqioiixmjm2ntm2zs0xzwnkltqzotgtotjhni01nzi4ndu2y2nkyzcilcjhy2nlc3nfdhlwzsi6inbyb2ply3qilcjpc3mioijsb3zhymxllwfwasisinn1yii6ijeymzy1mzzlltfly2qtndm5oc05mme2ltu3mjg0ntzjy2rjnyisimf1zci6wyjsb3zhymxllwfwccjdlcjlehaioje3odcwnjc5odcsim5izii6mtc4njk4mtu4nywiawf0ijoxnzg2otgxntg3fq2eteosrwlepbfl8b1cskoduuihzmqzwycnafgmtvmu1nc1fqicieb3fbjajsdyedmr5zzup4jfu2d4sh2ei00uanp0cqraunlr4bmgw0rsowdjsas5j90zwmn6kudyztdlwuiskewag4mi2b8poq6nvaelj6dwxmy9eevfssk8lf3gr07skhnpddypr8bhd9dnsc63dml6pht3v6x2j209mq4kfid0yuiphxulwhy4sji5denkcmvbnfzlfa56cq4oqslaanxenckpm9arzpyt3v67nidzbjqxd4pxnldx8qysfmdw5tkab6qawxgq5nwutfhkuke9an1f24qdyuwa5urnyqbfwidrrjjdcw96gu6q7hbsxiiorh3rew7g6hicjnkjpbnboxbsiijyxmkkh6omxahwh99t1sfcexylfqlqshjkctz3uqvddp6jtesimvqg08wf9hvknbphopn3u1eawytjp9auqud4zfljsadk0yrcnxeip4gtnu4htmwt7jtdaw3lg9fscax3qo2f0bglelk6wxfzdqabxutg027qqkyfdlffibntwieoir6jxfl7noscwxcgfw72kyoxpo3y4pedtrpr0xu2x1uqttssind1o8mvocpvvbgsdvilxh0jagklkkgyf4eoud6y4c" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="PCI. Ai apps" />
+            </intent-filter>
+        </activity>
+        
+        
+        <service
+            android:name=".BPFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        
+        
+        
+    </application>
+
+</manifest>
